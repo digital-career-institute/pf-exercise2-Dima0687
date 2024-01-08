@@ -42,7 +42,6 @@ ALTER TABLE patients DROP PRIMARY KEY;
 ALTER TABLE patients ADD PRIMARY KEY (PatientID, AppointmentID);
 
 ALTER TABLE patients DROP FOREIGN KEY patients_ibfk_1;
-ALTER TABLE patients DROP FOREIGN KEY patients_ibfk_2;
 
 ALTER TABLE patients ADD FOREIGN KEY ( PsychologistID ) REFERENCES psychologist ( PsychologistID );
 ```
