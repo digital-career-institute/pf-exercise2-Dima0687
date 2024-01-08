@@ -31,3 +31,18 @@ Add Foreign Key:
 
 Add a new foreign key constraint on the Patients table, referencing the Psychologists table.
 
+```SQL
+CREATE TABLE psychologist (PsychologistID INT PRIMARY KEY AUTO_INCREMENT, PsychologistName VARCHAR(255));
+
+CREATE TABLE patients (PatientID INT PRIMARY KEY AUTO_INCREMENT, Name VARCHAR(100) NOT NULL, Age INT NOT NULL, Gender VARCHAR(25) NOT NULL, AppointmentDate DATE, PsychologistID INT, FOREIGN KEY(PsychologistID) REFERENCES Psychologist(PsychologistID)  );
+
+ALTER TABLE patients MODIFY PatientID INT;
+ALTER TABLE patients DROP PRIMARY KEY;
+
+ALTER TABLE patients ADD PRIMARY KEY (PatientID, AppointmentID);
+
+ALTER TABLE patients DROP FOREIGN KEY patients_ibfk_1;
+ALTER TABLE patients DROP FOREIGN KEY patients_ibfk_2;
+
+ALTER TABLE patients ADD FOREIGN KEY ( PsychologistID ) REFERENCES psychologist ( PsychologistID );
+```
