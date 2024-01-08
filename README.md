@@ -39,7 +39,7 @@ CREATE TABLE patients (PatientID INT PRIMARY KEY AUTO_INCREMENT, Name VARCHAR(10
 ALTER TABLE patients MODIFY PatientID INT;
 ALTER TABLE patients DROP PRIMARY KEY;
 
-ALTER TABLE patients ADD PRIMARY KEY (PatientID, AppointmentID);
+ALTER TABLE patients ADD PRIMARY KEY (PatientID, AppointmentDate);
 
 ALTER TABLE patients DROP FOREIGN KEY patients_ibfk_1;
 
